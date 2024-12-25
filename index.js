@@ -34,8 +34,7 @@ function searchHandler(e) {
     const searchQuery = e.target.value.trim();
     if (!searchQuery || searchQuery.length < 4 || searchQuery === lastSearchQuery) return;
     if (!isSearchTriggerEnabled) clearMoviesList();
-
-    let url = `http://www.omdbapi.com/?apikey=a1f5b2ba&s=${searchQuery}`;
+    let url = `https://www.omdbapi.com/?apikey=a1f5b2ba&s=${searchQuery}`;
     getData(url)
       .then((films) => films.forEach((film) => showFilms(film)))
       .catch((err) => console.error(err));
